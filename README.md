@@ -36,5 +36,13 @@ them.
 This extension simply reads a few files and performs basic text transformations
 before inserting the snippets into the editor and leaves vscode to do the rest.
 
+## Development
+
+### Publishing
+
+```bash
+./node_modules/.bin/vsce publish
+```
+
 [emacs-yassnippet]: https://github.com/joaotavora/yasnippet
 [vscode]: https://code.visualstudio.com/
