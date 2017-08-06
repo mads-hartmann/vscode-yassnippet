@@ -33,7 +33,7 @@ the snippets, they simply differ in the way they wrap that body. vscode uses
 `json`, atom uses `cson`, and emacs uses `plaintext` files with comments in
 them.
 
-This extension simply reads a few files and performs basic text transformation
+This extension simply reads a few files and performs basic text transformations
 before inserting the snippets into the editor and leaves vscode to do the rest.
 
 [emacs-yassnippet]: https://github.com/joaotavora/yasnippet
