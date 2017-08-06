@@ -44,6 +44,10 @@ before inserting the snippets into the editor and leaves vscode to do the rest.
 
 ## Development
 
+### TODO
+
+* [ ] Read the yassnippets on initialization and add support tab-triggers
+
 ### Publishing
 
 ```bash
