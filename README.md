@@ -4,7 +4,9 @@ This extension adds support for [yassnippet][emacs-yassnippet] snippets to
 [Visual Studio Code][vscode].
 
 It assumes you keep your snippets structures by language like so. The language
-folders can be named either `<langauge>` or `<langauge>-mode`.
+folders can be named either `<langauge>` or `<langauge>-mode`. The default
+location for snippets is `$HOME/.snippets` but this can be changed through
+[configuration](#configuration).
 
 ```
 <my-snippets-directory>
