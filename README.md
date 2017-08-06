@@ -45,7 +45,7 @@ before inserting the snippets into the editor and leaves vscode to do the rest.
 ### Publishing
 
 ```bash
-./node_modules/.bin/vsce publish
+npm run publish
 ```
 
 [emacs-yassnippet]: https://github.com/joaotavora/yasnippet
