@@ -13,9 +13,10 @@ It assumes you keep your snippets structures by language like so
 
 ## Configuration
 
-* `yassnippet.path`: path to the directory that contains your snippets. Can
-  be absolute, e.g. `/Users/hartmann` or relative `mysnippets`. Relative paths
-  are resolved relative the users home directory.
+* `yassnippet.path`: path to the directory that contains your snippets. Can be
+absolute, e.g. `/Users/hartmann/.snippets` or relative `.snippets`. Relative
+paths are resolved relative the users home directory. The default value is
+`.snippets`
 
 ## FAQ
 
