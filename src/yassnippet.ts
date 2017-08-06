@@ -11,7 +11,7 @@ export default class Yassnippet {
     // parse yassnippets and find tab-triggers etc. at some point.
 
     public list(langauge: string): Promise<string[]> {
-        const directory = path.join(this.snippetsDirectory(), langauge)
+        const directory = this.languageDirectory(langauge);
 
         if (!fs.existsSync(directory)) {
             return Promise.resolve([]);
@@ -33,7 +33,7 @@ export default class Yassnippet {
     }
 
     public get(language: string, snippet: string): Promise<vscode.SnippetString> {
-        const file = path.join(this.snippetsDirectory(), language, snippet)
+        const file = path.join(this.languageDirectory(language), snippet)
         return new Promise((resolve, reject) => {
             try {
                 fs.readFile(file, 'utf8', (err, buffer) => {
@@ -48,6 +48,22 @@ export default class Yassnippet {
                 reject(err);
             }
         });
+    }
+
+    private languageDirectory(language: string): string | null {
+        const directory = path.join(this.snippetsDirectory(), language);
+        const modeDirectory = path.join(this.snippetsDirectory(), `${language}-mode`);
+
+        if (fs.existsSync(directory)) {
+            return directory;
+        }
+
+        if (fs.existsSync(modeDirectory)) {
+            return modeDirectory;
+        }
+
+        return null;
+
     }
 
     private snippetsDirectory(): string {

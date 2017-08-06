@@ -3,12 +3,16 @@
 This extension adds support for [yassnippet][emacs-yassnippet] snippets to
 [Visual Studio Code][vscode].
 
-It assumes you keep your snippets structures by language like so
+It assumes you keep your snippets structures by language like so. The language
+folders can be named either `<langauge>` or `<langauge>-mode`.
 
 ```
-<my-snippets-folder>
-  - <language>
-    - <snippet>
+<my-snippets-directory>
+├── markdown
+│   └── code
+├── python
+│   ├── __int__
+│   └── ... and so on ...
 ```
 
 ## Configuration
