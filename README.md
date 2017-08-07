@@ -47,6 +47,8 @@ before inserting the snippets into the editor and leaves vscode to do the rest.
 ### TODO
 
 * [ ] Read the yassnippets on initialization and add support tab-triggers
+* [ ] Make it possible to configure aliases. E.g. `sh-mode` is called shellscript
+      in vscode
 
 ### Publishing
 
