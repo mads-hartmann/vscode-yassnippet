@@ -1,8 +1,8 @@
 {
     "name": "yassnippet",
-    "displayName": "yassnippet",
+    "displayName": "Yassnippet",
     "description": "Use your yassnippets in vscode",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "publisher": "mads-hartmann",
     "engines": {
         "vscode": "^1.14.0"
@@ -40,7 +40,23 @@
                     "description": "The path to the folder that contains snippets. Can be either an absolute path, otherwise it's to be relative to the users home directory"
                 }
             }
-        }
+        },
+        "languages": [
+            {
+                "id": "yassnippet",
+                "aliases": [
+                    "Yassnippet"
+                ],
+                "configuration": "./language/configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "yassnippet",
+                "scopeName": "text.yassnippet",
+                "path": "./language/syntax.json"
+            }
+        ]
     },
     "scripts": {
         "vscode:prepublish": "tsc -p ./",

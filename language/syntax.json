@@ -1,0 +1,27 @@
+{
+    "name": "Yassnippet",
+    "scopeName": "text.yassnippet",
+    "patterns": [
+        {
+            "name": "comment.line.number-sign",
+            "begin": "#",
+            "end": "\n"
+         },
+         {
+            "match": "(\\$)([[:digit:]]+)",
+            "captures": {
+                "1": { "name": "punctuation.definition.variable.shell" },
+                "2": { "name": "variable.other.positional" }
+            }
+         },
+         {
+             "match": "(\\${)([[:digit:]]+):([a-zA-Z_][a-zA-Z0-9_]+)(})",
+             "captures": {
+                 "1": { "name": "punctuation.definition.variable.shell" },
+                 "2": { "name": "variable.other.bracket.shell" },
+                 "3": { "name": "variable.other.bracket.shell" },
+                 "4": { "name": "punctuation.definition.variable.shell" }
+             }
+         }
+    ]
+}

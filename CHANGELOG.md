@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.4
+
+* Very basic yassnippet language support
+  Syntax highlighting and comment/smart-pairs.
+
 ## 0.0.3
 
 * Fix package.json so the configuration options are placed correctly
