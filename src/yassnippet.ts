@@ -51,7 +51,14 @@ export default class Yassnippet {
     }
 
     private languageDirectory(language: string): string | null {
-        const directory = path.join(this.snippetsDirectory(), language);
+        const config = vscode.workspace.getConfiguration("yassnippet")
+        const mapping = config.get<Object>("mapping")
+
+        const languageDirName = (language in mapping)
+            ? mapping[language]
+            : language
+
+        const directory = path.join(this.snippetsDirectory(), languageDirName);
         const modeDirectory = path.join(this.snippetsDirectory(), `${language}-mode`);
 
         if (fs.existsSync(directory)) {
@@ -63,11 +70,11 @@ export default class Yassnippet {
         }
 
         return null;
-
     }
 
     private snippetsDirectory(): string {
-        const configPath = vscode.workspace.getConfiguration("yassnippet").get<string>("path", ".snippets");
+        const config = vscode.workspace.getConfiguration("yassnippet")
+        const configPath = config.get<string>("path", ".snippets");
         if (path.isAbsolute(configPath)) {
             return configPath;
         }

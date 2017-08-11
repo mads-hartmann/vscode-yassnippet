@@ -3,6 +3,15 @@
 This extension adds support for [yassnippet][emacs-yassnippet] snippets to
 [Visual Studio Code][vscode].
 
+## Features
+
+* Keep your snippets in an editor-agnostic format using Yassnippets
+* Yassnippet expansion through command
+* __TODO__ Yassnippet highlighting
+* __TODO__ Yassnippet insertion through tab-triggers
+
+## Configuration
+
 It assumes you keep your snippets structures by language like so. The language
 folders can be named either `<langauge>` or `<langauge>-mode`. The default
 location for snippets is `$HOME/.snippets` but this can be changed through
@@ -17,12 +26,20 @@ location for snippets is `$HOME/.snippets` but this can be changed through
 │   └── ... and so on ...
 ```
 
-## Configuration
-
 * `yassnippet.path`: path to the directory that contains your snippets. Can be
 absolute, e.g. `/Users/hartmann/.snippets` or relative `.snippets`. Relative
 paths are resolved relative the users home directory. The default value is
 `.snippets`
+
+* `yassnippet.mapping`: A mapping from languages to folder folders relative to
+your `yassnippet.path`. An example would be  
+
+  ```json
+  "yassnippet.mapping": {
+      "shellscript": "sh-mode"
+  },
+  ```
+
 
 ## FAQ
 
@@ -47,8 +64,7 @@ before inserting the snippets into the editor and leaves vscode to do the rest.
 ### TODO
 
 * [ ] Read the yassnippets on initialization and add support tab-triggers
-* [ ] Make it possible to configure aliases. E.g. `sh-mode` is called shellscript
-      in vscode
+* [ ] Support language
 
 ### Publishing
 

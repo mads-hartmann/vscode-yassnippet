@@ -2,16 +2,18 @@
     "name": "yassnippet",
     "displayName": "yassnippet",
     "description": "Use your yassnippets in vscode",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "publisher": "mads-hartmann",
     "engines": {
         "vscode": "^1.14.0"
     },
     "categories": [
+        "Languages",
+        "Snippets",
         "Other"
     ],
     "activationEvents": [
-        "onCommand:extension.insertSnippet"
+        "*"
     ],
     "main": "./out/src/extension",
     "contributes": {
@@ -20,16 +22,23 @@
                 "command": "extension.insertSnippet",
                 "title": "Insert Yassnippet"
             }
-        ]
-    },
-    "configuration": {
-        "type": "object",
-        "title": "Yassnippet configuration",
-        "properties": {
-            "yassnippet.path": {
-                "type": "string",
-                "default": ".snippets",
-                "description": "The path to the folder that contains snippets. Can be either an absolute path, otherwise it's to be relative to the users home directory"
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Yassnippet configuration",
+            "properties": {
+                "yassnippet.mapping": {
+                    "type": "object",
+                    "default": {
+                        "shellscript": "sh-mode"
+                    },
+                    "description": "A mapping from languages to folder folders relative to your `yassnippet.path`"
+                },
+                "yassnippet.path": {
+                    "type": "string",
+                    "default": ".snippets",
+                    "description": "The path to the folder that contains snippets. Can be either an absolute path, otherwise it's to be relative to the users home directory"
+                }
             }
         }
     },
