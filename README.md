@@ -64,7 +64,6 @@ before inserting the snippets into the editor and leaves vscode to do the rest.
 ### TODO
 
 * [ ] Read the yassnippets on initialization and add support tab-triggers
-* [ ] Support language
 
 ### Publishing
 
