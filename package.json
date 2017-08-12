@@ -1,77 +1,69 @@
 {
-    "name": "yassnippet",
-    "displayName": "Yassnippet",
-    "description": "Use your yassnippets in vscode",
-    "version": "0.0.4",
-    "publisher": "mads-hartmann",
-    "engines": {
-        "vscode": "^1.14.0"
-    },
-    "categories": [
-        "Languages",
-        "Snippets",
-        "Other"
+  "name": "yassnippet",
+  "displayName": "Yassnippet",
+  "description": "Use your yassnippets in vscode",
+  "version": "0.0.5",
+  "publisher": "mads-hartmann",
+  "engines": {
+    "vscode": "^1.14.0"
+  },
+  "categories": ["Languages", "Snippets", "Other"],
+  "activationEvents": ["*"],
+  "main": "./out/src/extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.insertSnippet",
+        "title": "Insert Yassnippet"
+      }
     ],
-    "activationEvents": [
-        "*"
-    ],
-    "main": "./out/src/extension",
-    "contributes": {
-        "commands": [
-            {
-                "command": "extension.insertSnippet",
-                "title": "Insert Yassnippet"
-            }
-        ],
-        "configuration": {
-            "type": "object",
-            "title": "Yassnippet configuration",
-            "properties": {
-                "yassnippet.mapping": {
-                    "type": "object",
-                    "default": {
-                        "shellscript": "sh-mode"
-                    },
-                    "description": "A mapping from languages to folder folders relative to your `yassnippet.path`"
-                },
-                "yassnippet.path": {
-                    "type": "string",
-                    "default": ".snippets",
-                    "description": "The path to the folder that contains snippets. Can be either an absolute path, otherwise it's to be relative to the users home directory"
-                }
-            }
+    "configuration": {
+      "type": "object",
+      "title": "Yassnippet configuration",
+      "properties": {
+        "yassnippet.mapping": {
+          "type": "object",
+          "default": {
+            "shellscript": "sh-mode"
+          },
+          "description": "A mapping from languages to folder folders relative to your `yassnippet.path`"
         },
-        "languages": [
-            {
-                "id": "yassnippet",
-                "aliases": [
-                    "Yassnippet"
-                ],
-                "configuration": "./language/configuration.json"
-            }
-        ],
-        "grammars": [
-            {
-                "language": "yassnippet",
-                "scopeName": "text.yassnippet",
-                "path": "./language/syntax.json"
-            }
-        ]
+        "yassnippet.path": {
+          "type": "string",
+          "default": ".snippets",
+          "description": "The path to the folder that contains snippets. Can be either an absolute path, otherwise it's to be relative to the users home directory"
+        }
+      }
     },
-    "scripts": {
-        "vscode:prepublish": "tsc -p ./",
-        "compile": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install",
-        "test": "node ./node_modules/vscode/bin/test",
-        "publish": "vsce publish"
-    },
-    "devDependencies": {
-        "@types/mocha": "^2.2.32",
-        "@types/node": "^6.0.40",
-        "mocha": "^2.3.3",
-        "typescript": "^2.0.3",
-        "vsce": "^1.30.0",
-        "vscode": "^1.0.0"
-    },
-    "dependencies": {}
+    "languages": [
+      {
+        "id": "yassnippet",
+        "aliases": ["Yassnippet"],
+        "configuration": "./language/configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "yassnippet",
+        "scopeName": "text.yassnippet",
+        "path": "./language/syntax.json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test",
+    "publish": "vsce publish"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.32",
+    "@types/node": "^6.0.40",
+    "mocha": "^2.3.3",
+    "typescript": "^2.0.3",
+    "vsce": "^1.30.0",
+    "vscode": "^1.0.0"
+  },
+  "dependencies": {}
 }

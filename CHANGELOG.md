@@ -1,5 +1,10 @@
 # Change Log
 
+## 0.0.5
+
+* Added support for insertion through code-completions 🎉
+* Improved details shown in the insertSnippet command
+
 ## 0.0.4
 
 * Very basic yassnippet language support

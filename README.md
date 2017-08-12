@@ -7,39 +7,37 @@ This extension adds support for [yassnippet][emacs-yassnippet] snippets to
 
 * Keep your snippets in an editor-agnostic format using Yassnippets
 * Yassnippet expansion through command
-* __TODO__ Yassnippet highlighting
-* __TODO__ Yassnippet insertion through tab-triggers
+* Yassnippet expansion through code-completion
+* Yassnippet syntax highlighting
+* __TODO__ Yassnippet insertion through tab-trigger
+
+## Snippets
+
+Snippets are stored as plaintext files. By default they're in `~/.snippets/<language>`
+but can be [configured](#configuration) to be stored elsewhere. A snippet file
+looks like this:
+
+    # name: Fenced code block
+    # key: fenced
+    # --
+    ```${1:language}
+    $0
+    ```
+
+Everything after the `# --` marker is the body of your snippet. See
+[vscode documentation][snippet-syntax-docs] for the syntax.
 
 ## Configuration
 
-It assumes you keep your snippets structures by language like so. The language
-folders can be named either `<langauge>` or `<langauge>-mode`. The default
-location for snippets is `$HOME/.snippets` but this can be changed through
-[configuration](#configuration).
+To see the configuration options check out the 'Contributions' tab for the
+extension in [vscode][vscode] or simply type `yassnippet.<tab>` in your 'User
+Settings' file.
 
-```
-<my-snippets-directory>
-├── markdown
-│   └── code
-├── python
-│   ├── __int__
-│   └── ... and so on ...
-```
+If you're using this extension to manage your snippets you probably want to
+disable the snippets that are provided by vscode and various other extensions
 
-* `yassnippet.path`: path to the directory that contains your snippets. Can be
-absolute, e.g. `/Users/hartmann/.snippets` or relative `.snippets`. Relative
-paths are resolved relative the users home directory. The default value is
-`.snippets`
-
-* `yassnippet.mapping`: A mapping from languages to folder folders relative to
-your `yassnippet.path`. An example would be  
-
-  ```json
-  "yassnippet.mapping": {
-      "shellscript": "sh-mode"
-  },
-  ```
-
+    "editor.tabCompletion": false,
+    "editor.snippetSuggestions": "none",
 
 ## FAQ
 
@@ -61,15 +59,12 @@ before inserting the snippets into the editor and leaves vscode to do the rest.
 
 ## Development
 
-### TODO
-
-* [ ] Read the yassnippets on initialization and add support tab-triggers
-
 ### Publishing
 
 ```bash
 npm run publish
 ```
 
+[snippet-syntax-docs]: https://code.visualstudio.com/docs/editor/userdefinedsnippets#_snippet-syntax
 [emacs-yassnippet]: https://github.com/joaotavora/yasnippet
 [vscode]: https://code.visualstudio.com/
