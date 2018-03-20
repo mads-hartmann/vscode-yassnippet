@@ -55,7 +55,12 @@ export default class YassnippetCollection {
 
   public list(language: string): YassnippetSnippet[] {
     const key = this.keyForLanguage(language);
-    return this.snippets.has(key) ? this.snippets.get(key) : [];
+    const alt = `${key}-mode`;
+
+    return [].concat(
+      this.snippets.has(key) ? this.snippets.get(key) : [],
+      this.snippets.has(alt) ? this.snippets.get(alt) : []
+    );
   }
 
   public get(language: string, snippet: string): YassnippetSnippet {

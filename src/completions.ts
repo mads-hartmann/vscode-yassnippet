@@ -41,6 +41,7 @@ export default class YassnippetCompletionItemProvider
       snippet =>
         new YassnippetCompletionItem(snippet.key, snippet.snippet, snippet.name)
     );
+
     return Promise.resolve(completions);
   }
 }

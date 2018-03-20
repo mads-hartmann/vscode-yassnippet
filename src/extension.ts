@@ -12,7 +12,7 @@ import YassnippetCollection from "./yassnippet/collection";
 export function activate(context: vscode.ExtensionContext) {
   YassnippetCollection.load().then(collection => {
     const disposable = vscode.commands.registerCommand(
-      "extension.insertSnippet",
+      "yassnippet.insertSnippet",
       () => Commands.insertSnippet(collection)
     );
 
@@ -20,9 +20,7 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(
       vscode.languages.registerCompletionItemProvider(
         { scheme: "file" },
-        new YassnippetCompletionItemProvider(collection),
-        ".",
-        "*"
+        new YassnippetCompletionItemProvider(collection)
       )
     );
   });

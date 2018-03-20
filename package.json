@@ -13,7 +13,7 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.insertSnippet",
+        "command": "yassnippet.insertSnippet",
         "title": "Insert Yassnippet"
       }
     ],
